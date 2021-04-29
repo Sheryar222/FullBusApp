@@ -37,13 +37,13 @@ public class WelcomePage extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.bottom_navigation_home:
                             img.setVisibility(View.INVISIBLE);
-                            selectFragment = new Dashboard_home2();
+                            selectFragment =  new Dashboard_home2();
                             break;
                         case R.id.BookingTab:
                             startActivity(new Intent(WelcomePage.this, Booking.class));
                             break;
                         case R.id.profiletab:
-                          selectFragment=new Favourite();
+                            startActivity(new Intent(WelcomePage.this, Feedback.class));
 //                        startActivity(new Intent(WelcomePage.this, Profile.class));
                           break;
                         case R.id.location:

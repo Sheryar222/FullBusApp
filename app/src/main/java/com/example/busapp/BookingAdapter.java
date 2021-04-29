@@ -19,6 +19,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
@@ -27,6 +28,8 @@ import java.util.Random;
 
 public class BookingAdapter extends FirebaseRecyclerAdapter<Buses,BookingAdapter.viewholder> {
 
+
+    Context context;
     private List<Buses> mList;
     private Activity mactivity;
     private DatabaseReference databaseReference;
@@ -67,6 +70,11 @@ public class BookingAdapter extends FirebaseRecyclerAdapter<Buses,BookingAdapter
                 TextView busno=myview.findViewById(R.id.textView17);
                TextView rand = myview.findViewById(R.id.random_ticket);
 
+//               String dep=dept.getText().toString();
+//               String time=depttime.getText().toString();
+//               String datee=date.getText().toString();
+//               String busno1=busno.getText().toString();
+
                 Button feedback=myview.findViewById(R.id.button3);
 
                 rand.setText("#"+random_no);
@@ -75,15 +83,28 @@ public class BookingAdapter extends FirebaseRecyclerAdapter<Buses,BookingAdapter
                 date.setText(model.getDate());
                 depttime.setText(model.getTimedept());
 
+                String dep=model.getDepature();
+                String time=model.getTimedept();
+                String datee=model.getDate();
+                String busno1=model.getBusno();
+
+
                 dialogPlus.show();
 
                 feedback.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
+                       databaseReference= FirebaseDatabase.getInstance().getReference().child("Tickets");
 
+                    Tickets ticket=new Tickets(
+                            busno1,
+                            time,
+                            datee,
+                            dep
+                    );
 
-
+                        databaseReference.push().setValue(ticket);
                         Toast.makeText(v.getContext(), "Your Ticket has been Confirmed Now Enjoy your Journey", Toast.LENGTH_SHORT).show();
 
 

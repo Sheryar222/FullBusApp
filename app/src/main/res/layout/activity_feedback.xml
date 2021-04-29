@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="#fff"
     tools:context=".Feedback">
 
     <EditText
@@ -51,9 +51,8 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/black"
         android:text="Submit"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +62,8 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="186dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="312dp"
         android:text="To:"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,22 +73,19 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="84dp"
-        android:text="FeedBack"
+        android:layout_marginStart="124dp"
         android:fontFamily="@font/latto_bangers"
+        android:text="FeedBack"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="52dp"
         android:text="Message:"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +95,19 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
         android:text="Subject:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="244dp"
+        android:layout_height="203dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/feedbackimage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

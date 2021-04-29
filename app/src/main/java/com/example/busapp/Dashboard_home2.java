@@ -64,7 +64,9 @@ public class Dashboard_home2 extends Fragment {
         menubtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 drawerLayout.openDrawer(GravityCompat.START);
+
             }
         });
 
@@ -83,7 +85,7 @@ public class Dashboard_home2 extends Fragment {
         } else {
 
 
-            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+             navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
                 Fragment selectFragment = null;
 
                 @Override

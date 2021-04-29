@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity {
                                         .addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                GlobalVar.currentUser=snapshot.getValue(Register.class);
+//                                                GlobalVar.currentUser=snapshot.getValue(Register.class);
                                                 startActivity(new Intent(Login.this, WelcomePage.class));
 
                                             }
